@@ -1,0 +1,2 @@
+MODEL_SPONDYLO_NAME="modelSpondylolisthesis"
+BASELINE_MODEL_NAME="emilyalsentzer/Bio_ClinicalBERT"
