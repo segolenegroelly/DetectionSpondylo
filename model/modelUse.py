@@ -85,7 +85,7 @@ def generatePrediction(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, m
 def predireMaladie(model, token, texte)->tuple[str,float]:
     inputs = token(texte, return_tensors="pt", truncation=True, max_length=512)
     outputs = model(**inputs)
-    probabilite = torch.softmax(outputs.logits)[0][1].item()
+    probabilite = torch.sigmoid(outputs.logits).item()
     return "oui" if probabilite>0.40 else "non",probabilite
 
 

@@ -1,6 +1,8 @@
+from tf_keras.src.losses import mean_squared_error, mean_absolute_error
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments, EvalPrediction, AutoTokenizer, \
     EarlyStoppingCallback
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support, precision_score, recall_score, f1_score
+
 
 def computeModel(baselineModelName:str,train_dataset, test_dataset,token,nom:str)->AutoModelForSequenceClassification:
     model = generateModel(baselineModelName)
@@ -12,7 +14,7 @@ def computeModel(baselineModelName:str,train_dataset, test_dataset,token,nom:str
 def generateModel(baselineModelName:str)-> AutoModelForSequenceClassification:
     return AutoModelForSequenceClassification.from_pretrained(
         baselineModelName,
-        num_labels=2
+        num_labels=1
     )
 
 def prepareTrainer(model, train_dataset, test_dataset)->Trainer:
@@ -45,15 +47,25 @@ def prepareTrainer(model, train_dataset, test_dataset)->Trainer:
         callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
     )
 def compute_metrics(pred:EvalPrediction):
-    labels = pred.label_ids
-    preds = pred.predictions.argmax(-1)
-    precision, recall, f1, _ = precision_recall_fscore_support(labels, preds, average='binary')
-    acc = accuracy_score(labels, preds)
+    predictions, labels = pred
+    predictions = predictions.flatten()
+
+    pred_binary = (predictions > 0.5).astype(int)
+    labels_binary = (labels > 0.5).astype(int)
+
+    mse = mean_squared_error(labels, predictions)
+    mae = mean_absolute_error(labels, predictions)
+
+    precision = precision_score(labels_binary, pred_binary)
+    recall = recall_score(labels_binary, pred_binary)
+    f1 = f1_score(labels_binary, pred_binary)
+
     return {
-        'accuracy': acc,
-        'f1': f1,
+        'mse': mse,
+        'mae': mae,
         'precision': precision,
-        'recall': recall
+        'recall': recall,
+        'f1': f1
     }
 
 def training(trainer:Trainer):
