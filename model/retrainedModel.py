@@ -1,7 +1,8 @@
 from tf_keras.src.losses import mean_squared_error, mean_absolute_error
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments, EvalPrediction, AutoTokenizer, \
     EarlyStoppingCallback
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support, precision_score, recall_score, f1_score, \
+    roc_auc_score, average_precision_score
 
 
 def computeModel(baselineModelName:str,train_dataset, test_dataset,token,nom:str)->AutoModelForSequenceClassification:
@@ -30,7 +31,7 @@ def prepareTrainer(model, train_dataset, test_dataset)->Trainer:
         eval_strategy="epoch",
         save_strategy="epoch",
         load_best_model_at_end=True,
-        metric_for_best_model="eval_recall",
+        metric_for_best_model="eval_auc_pr",
         greater_is_better=True
     )
 
@@ -53,19 +54,20 @@ def compute_metrics(pred:EvalPrediction):
     pred_binary = (predictions > 0.5).astype(int)
     labels_binary = (labels > 0.5).astype(int)
 
-    mse = mean_squared_error(labels, predictions)
-    mae = mean_absolute_error(labels, predictions)
+    # Métriques de classification
+    precision = precision_score(labels_binary, pred_binary, zero_division=0)
+    recall = recall_score(labels_binary, pred_binary, zero_division=0)
+    f1 = f1_score(labels_binary, pred_binary, zero_division=0)
 
-    precision = precision_score(labels_binary, pred_binary)
-    recall = recall_score(labels_binary, pred_binary)
-    f1 = f1_score(labels_binary, pred_binary)
+    auc_roc = roc_auc_score(labels_binary, predictions)
+    auc_pr = average_precision_score(labels_binary, predictions)
 
     return {
-        'mse': mse,
-        'mae': mae,
         'precision': precision,
         'recall': recall,
-        'f1': f1
+        'f1': f1,
+        'auc_roc': auc_roc,
+        'auc_pr': auc_pr
     }
 
 def training(trainer:Trainer):

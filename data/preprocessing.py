@@ -20,7 +20,7 @@ class ModelDataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         return {
             'input_ids': torch.tensor(self.input_ids[idx], dtype=torch.long),
-            'labels': torch.tensor(self.labels[idx], dtype=torch.long),
+            'labels': torch.tensor(self.labels[idx], dtype=torch.float),
         }
 
 def tokenize(data:pd.DataFrame, token) -> pd.DataFrame :
