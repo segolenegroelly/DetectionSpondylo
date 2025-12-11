@@ -1,6 +1,9 @@
+from tf_keras.src.losses import mean_squared_error, mean_absolute_error
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments, EvalPrediction, AutoTokenizer, \
     EarlyStoppingCallback
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support, precision_score, recall_score, f1_score, \
+    roc_auc_score, average_precision_score
+
 
 def computeModel(baselineModelName:str,train_dataset, test_dataset,token,nom:str)->AutoModelForSequenceClassification:
     model = generateModel(baselineModelName)
@@ -12,7 +15,7 @@ def computeModel(baselineModelName:str,train_dataset, test_dataset,token,nom:str
 def generateModel(baselineModelName:str)-> AutoModelForSequenceClassification:
     return AutoModelForSequenceClassification.from_pretrained(
         baselineModelName,
-        num_labels=2
+        num_labels=1
     )
 
 def prepareTrainer(model, train_dataset, test_dataset)->Trainer:
@@ -28,7 +31,7 @@ def prepareTrainer(model, train_dataset, test_dataset)->Trainer:
         eval_strategy="epoch",
         save_strategy="epoch",
         load_best_model_at_end=True,
-        metric_for_best_model="eval_recall",
+        metric_for_best_model="eval_auc_pr",
         greater_is_better=True
     )
 
@@ -45,15 +48,26 @@ def prepareTrainer(model, train_dataset, test_dataset)->Trainer:
         callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
     )
 def compute_metrics(pred:EvalPrediction):
-    labels = pred.label_ids
-    preds = pred.predictions.argmax(-1)
-    precision, recall, f1, _ = precision_recall_fscore_support(labels, preds, average='binary')
-    acc = accuracy_score(labels, preds)
+    predictions, labels = pred
+    predictions = predictions.flatten()
+
+    pred_binary = (predictions > 0.5).astype(int)
+    labels_binary = (labels > 0.5).astype(int)
+
+    # Métriques de classification
+    precision = precision_score(labels_binary, pred_binary, zero_division=0)
+    recall = recall_score(labels_binary, pred_binary, zero_division=0)
+    f1 = f1_score(labels_binary, pred_binary, zero_division=0)
+
+    auc_roc = roc_auc_score(labels_binary, predictions)
+    auc_pr = average_precision_score(labels_binary, predictions)
+
     return {
-        'accuracy': acc,
-        'f1': f1,
         'precision': precision,
-        'recall': recall
+        'recall': recall,
+        'f1': f1,
+        'auc_roc': auc_roc,
+        'auc_pr': auc_pr
     }
 
 def training(trainer:Trainer):
