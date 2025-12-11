@@ -1,4 +1,3 @@
-from typing import Tuple
 
 import pandas as pd
 import torch
@@ -86,23 +85,23 @@ def predireMaladie(model, token, texte)->tuple[str,float]:
     inputs = token(texte, return_tensors="pt", truncation=True, max_length=512)
     outputs = model(**inputs)
     probabilite = torch.sigmoid(outputs.logits).item()
-    return "oui" if probabilite>0.40 else "non",probabilite
+    return "oui" if probabilite>0.50 else "non",probabilite
 
 
 
 def generationTableauPrediction(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie,
                                 symptomes: str, maladie: str, index: int) -> pd.DataFrame:
     predSp, probaSp = predireMaladie(modeleSpondylo, tokenSpondylo, symptomes)
-    predPd, probaPd = predireMaladie(modelePanic, tokenPanic, symptomes)
-    predHd, probaHd = predireMaladie(modeleHernie, tokenHernie, symptomes)
+    #predPd, probaPd = predireMaladie(modelePanic, tokenPanic, symptomes)
+    #predHd, probaHd = predireMaladie(modeleHernie, tokenHernie, symptomes)
     df = pd.DataFrame({
         'symptomes': symptomes,
         'maladie': maladie,
         'spondylo': predSp,
         'tc_spondylo': round(probaSp,2),
-        'panic': predPd,
-        'tc_panic': round(probaPd,2),
-        'hernie': predHd,
-        'tc_hernie': round(probaHd,2)
+        'panic': 0,
+        'tc_panic': round(0,2),
+        'hernie': 0,
+        'tc_hernie': round(0,2)
     }, index=[index])
     return df

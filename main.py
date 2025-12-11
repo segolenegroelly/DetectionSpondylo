@@ -9,8 +9,8 @@ from model.baselineModel import getTokenizer, generateSpondyloModele, generatePa
 from model.modelUse import generatePrediction, generateExemple
 from model.retrainedModel import loadSavedModelAndToken
 
+token = getTokenizer()
 if(GENERATE_MODEL):
-    token = getTokenizer()
     modeleSpondylo,tokenSpondylo = generateSpondyloModele(token)
     modelePanic, tokenPanic = generatePanicDisorderModele(token)
     modeleHernie, tokenHernie = generateHerniatedDiskModele(token)
@@ -34,14 +34,14 @@ class TexteInput(BaseModel):
 
 @app.post("/detection")
 async def detection(data: TexteInput):
-    resultat = generatePrediction(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie,data.texte)
+    resultat = generatePrediction(modeleSpondylo, token, modelePanic, token, modeleHernie, token,data.texte)
     return {
         "resultat": resultat
     }
 
 @app.get("/exemple")
 async def exemple():
-    resultat = generateExemple(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie)
+    resultat = generateExemple(modeleSpondylo, token, modelePanic, token, modeleHernie, token)
     return {
         "resultat": resultat
     }

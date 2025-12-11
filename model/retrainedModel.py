@@ -1,15 +1,13 @@
-from tf_keras.src.losses import mean_squared_error, mean_absolute_error
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments, EvalPrediction, AutoTokenizer, \
     EarlyStoppingCallback
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support, precision_score, recall_score, f1_score, \
-    roc_auc_score, average_precision_score
+from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score, average_precision_score
 
 
 def computeModel(baselineModelName:str,train_dataset, test_dataset,token,nom:str)->AutoModelForSequenceClassification:
     model = generateModel(baselineModelName)
     trainer = prepareTrainer(model, train_dataset, test_dataset)
     training(trainer)
-    saveModelAndTokenizer(model,token,nom)
+    saveModelAndTokenizer(trainer,token,nom)
     return model
 
 def generateModel(baselineModelName:str)-> AutoModelForSequenceClassification:
@@ -76,8 +74,8 @@ def training(trainer:Trainer):
     results = trainer.evaluate()
     print(f"Résultats : {results}")
 
-def saveModelAndTokenizer(model,token,nom:str):
-    model.save_pretrained(f'./{nom}Model')
+def saveModelAndTokenizer(trainer,token,nom:str):
+    trainer.save_model(f'./{nom}Model')
     print(f"Modèle sauvegardé")
     token.save_pretrained(f'./{nom}Tokenizer')
     print(f"Tokenizer sauvegardé")
