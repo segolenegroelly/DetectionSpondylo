@@ -39,22 +39,30 @@ def generationReponse(df: pd.DataFrame) -> str:
 
 def generateExemple(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie) -> str:
     texte_test = pd.DataFrame({
-        'symptomes': ["hip pain, loss of sensation, leg weakness",
-                      "shortness of breath, insomnia, abnormal involuntary movements, chest tightness, palpitations",
-                      "arm pain, neck pain, back pain, loss of sensation, paresthesia, arm weakness",
-                      "abnormal appearing skin, foot or toe swelling, hand or finger lump or mass, skin on leg or foot looks infected, sinus congestion, skin on arm or hand looks infected",
-                      "sharp abdominal pain, vomiting, diarrhea, heartburn, fever, chills",
-                      "suprapubic pain, sharp abdominal pain, vomiting, painful urination, lower abdominal pain, intermenstrual bleeding, burning abdominal pain",
-                      "diminished vision, pain in eye, eye redness, lacrimation",
-                      "wrist pain, wrist swelling, ankle pain, problems with movement, knee stiffness or tightness, ankle swelling"],
+        'symptomes': ["low back pain, problems with movement, paresthesia, leg cramps or spasms, leg weakness",
+            "hip pain, back pain, neck pain, low back pain, problems with movement, loss of sensation, leg cramps or spasms",
+            "leg pain, back pain, neck pain, problems with movement, loss of sensation, paresthesia, leg cramps or spasms",
+            "leg pain, hip pain, neck pain, problems with movement, paresthesia, leg weakness",
+            "arm pain, back pain, neck pain, paresthesia, shoulder pain, arm weakness",
+            "hip pain, back pain, low back pain, loss of sensation, paresthesia, shoulder pain, leg weakness",
+            "herniated disk	loss of sensation, paresthesia, shoulder pain",
+            "herniated disk	hip pain, arm pain, back pain, low back pain, loss of sensation, paresthesia, leg weakness",
+            "depressive or psychotic symptoms, irregular heartbeat, breathing fast",
+            "insomnia, palpitations, irregular heartbeat",
+            "depression, shortness of breath, depressive or psychotic symptoms, dizziness, insomnia, abnormal involuntary movements, irregular heartbeat",
+            "depression, depressive or psychotic symptoms, insomnia, abnormal involuntary movements, chest tightness, palpitations"],
         'maladie': ["spondylolisthesis",
-                    "panic disorder",
-                    "herniated disk",
-                    "paronychia",
-                    "white blood cell disease",
-                    "pelvic inflammatory disease",
-                    "conjunctivitis due to virus",
-                    "joint effusion"]
+            "spondylolisthesis",
+            "spondylolisthesis",
+            "spondylolisthesis",
+            "herniated disk",
+            "herniated disk",
+            "herniated disk",
+            "herniated disk",
+            "panic disorder",
+            "panic disorder",
+            "panic disorder",
+            "panic disorder"]
     })
 
     df = pd.DataFrame()
