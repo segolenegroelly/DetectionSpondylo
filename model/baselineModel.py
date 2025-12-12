@@ -18,7 +18,7 @@ def generateSpondyloModele(token):
     dfSpondylo = load_data_spondylo()
     dfSpondylo = cleaningData(dfSpondylo)
     dfSpondylo = tokenizeData(dfSpondylo, token)
-    train_data, test_data = separateTrainTest(dfSpondylo)
+    train_data, test_data = separateTrainTest(dfSpondylo, token)
 
     model = computeModel(BASELINE_MODEL_NAME, train_data, test_data, token, MODEL_SPONDYLO_NAME)
     return model,token
@@ -29,7 +29,7 @@ def generatePanicDisorderModele(token):
     dfPanic = load_data_panic_disorder()
     dfPanic = cleaningData(dfPanic)
     dfPanic = tokenizeData(dfPanic, token)
-    train_data, test_data = separateTrainTest(dfPanic)
+    train_data, test_data = separateTrainTest(dfPanic, token)
 
     model = computeModel(BASELINE_MODEL_NAME, train_data, test_data, token, MODEL_PANIC_NAME)
     return model,token
@@ -40,7 +40,7 @@ def generateHerniatedDiskModele(token):
     dfHernie = load_data_hernie()
     dfHernie = cleaningData(dfHernie)
     dfHernie = tokenizeData(dfHernie, token)
-    train_data, test_data = separateTrainTest(dfHernie)
+    train_data, test_data = separateTrainTest(dfHernie, token)
 
     model = computeModel(BASELINE_MODEL_NAME, train_data, test_data, token, MODEL_HERNIE_NAME)
     return model,token
