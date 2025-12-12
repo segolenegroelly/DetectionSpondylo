@@ -19,7 +19,7 @@ else:
     modelePanic, tokenPanic = loadSavedModelAndToken(MODEL_PANIC_NAME)
     modeleHernie, tokenHernie = loadSavedModelAndToken(MODEL_HERNIE_NAME)
 
-generateExemple(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie)
+print(generateExemple(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie))
 
 if(LAUNCH_FASTAPI):
     app = FastAPI()

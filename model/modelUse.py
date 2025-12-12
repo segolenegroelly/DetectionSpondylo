@@ -85,7 +85,7 @@ def predireMaladie(model, token, texte:str)->tuple[str,float]:
     inputs = token(texte, return_tensors="pt", truncation=True, max_length=512)
     outputs = model(**inputs)
     probabilite = torch.sigmoid(outputs.logits).item()
-    return "oui" if probabilite>0.50 else "non",probabilite
+    return "oui" if probabilite>0.60 else "non",probabilite
 
 def generationTableauPrediction(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie,
                                 symptomes: str, maladie: str, index: int) -> pd.DataFrame:

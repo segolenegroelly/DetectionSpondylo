@@ -3,9 +3,9 @@ import streamlit as st
 import requests
 
 
-st.set_page_config(page_title="Aide au diagnostique à destination des médecins généralistes", layout="wide")
+st.set_page_config(page_title="Aide au diagnostic à destination des médecins généralistes", layout="wide")
 
-st.title("Aide au diagnostique à destination des médecins généralistes")
+st.title("Aide au diagnostic à destination des médecins généralistes")
 
 texte_input = st.text_input("Inscrivez la liste des symptômes du patient:", key="champ_texte")
 
@@ -43,4 +43,4 @@ st.subheader("Résultat")
 if 'resultat' in st.session_state:
     st.html(st.session_state['resultat']['resultat'])
 else:
-    st.info("Veuillez cliquer sur un des bouton pour faire apparaitre un résultat")
+    st.info("Veuillez cliquer sur un des boutons pour faire apparaitre un résultat")
