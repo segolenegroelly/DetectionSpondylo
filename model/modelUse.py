@@ -81,7 +81,7 @@ def generatePrediction(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, m
     return generationReponse(df)
 
 
-def predireMaladie(model, token, texte)->tuple[str,float]:
+def predireMaladie(model, token, texte:str)->tuple[str,float]:
     inputs = token(texte, return_tensors="pt", truncation=True, max_length=512)
     outputs = model(**inputs)
     probabilite = torch.sigmoid(outputs.logits).item()
