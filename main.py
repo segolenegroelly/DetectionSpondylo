@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from config import MODEL_SPONDYLO_NAME, MODEL_PANIC_NAME, MODEL_HERNIE_NAME, GENERATE_MODEL
+from config import MODEL_SPONDYLO_NAME, MODEL_PANIC_NAME, MODEL_HERNIE_NAME, GENERATE_MODEL, LAUNCH_FASTAPI
 from model.baselineModel import getTokenizer, generateSpondyloModele, generatePanicDisorderModele, \
     generateHerniatedDiskModele
 from model.modelUse import generatePrediction, generateExemple
@@ -19,33 +19,36 @@ else:
     modelePanic, tokenPanic = loadSavedModelAndToken(MODEL_PANIC_NAME)
     modeleHernie, tokenHernie = loadSavedModelAndToken(MODEL_HERNIE_NAME)
 
-app = FastAPI()
+generateExemple(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie)
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+if(LAUNCH_FASTAPI):
+    app = FastAPI()
 
-class TexteInput(BaseModel):
-    texte: str
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
-@app.post("/detection")
-async def detection(data: TexteInput):
-    resultat = generatePrediction(modeleSpondylo, token, modelePanic, token, modeleHernie, token,data.texte)
-    return {
-        "resultat": resultat
-    }
+    class TexteInput(BaseModel):
+        texte: str
 
-@app.get("/exemple")
-async def exemple():
-    resultat = generateExemple(modeleSpondylo, token, modelePanic, token, modeleHernie, token)
-    return {
-        "resultat": resultat
-    }
+    @app.post("/detection")
+    async def detection(data: TexteInput):
+        resultat = generatePrediction(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie,data.texte)
+        return {
+            "resultat": resultat
+        }
 
-if __name__ == "__main__":
+    @app.get("/exemple")
+    async def exemple():
+        resultat = generateExemple(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, modeleHernie, tokenHernie)
+        return {
+            "resultat": resultat
+        }
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    if __name__ == "__main__":
+
+        uvicorn.run(app, host="0.0.0.0", port=8000)

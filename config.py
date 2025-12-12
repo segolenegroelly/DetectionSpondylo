@@ -4,3 +4,4 @@ MODEL_HERNIE_NAME="modelHerniatedDisk"
 BASELINE_MODEL_NAME="emilyalsentzer/Bio_ClinicalBERT"
 API_URL = "http://localhost:8000"
 GENERATE_MODEL = False
+LAUNCH_FASTAPI=True

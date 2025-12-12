@@ -23,7 +23,7 @@ class ModelDataset(torch.utils.data.Dataset):
             'labels': torch.tensor(self.labels[idx], dtype=torch.float),
         }
 
-def tokenize(data:pd.DataFrame, token) -> pd.DataFrame :
+def tokenizeData(data:pd.DataFrame, token) -> pd.DataFrame :
 
     data['sequence'] = data['text_cleaned'].apply(
         lambda x: token.encode(
