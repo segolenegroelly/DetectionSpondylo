@@ -1,6 +1,7 @@
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments, EvalPrediction, AutoTokenizer, \
     EarlyStoppingCallback
 from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score, average_precision_score
+from scipy.special import expit
 
 
 def computeModel(baselineModelName:str,train_dataset, test_dataset,token,nom:str)->AutoModelForSequenceClassification:
@@ -45,11 +46,14 @@ def prepareTrainer(model, train_dataset, test_dataset)->Trainer:
         compute_metrics=compute_metrics,
         callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
     )
-def compute_metrics(pred:EvalPrediction):
+
+def compute_metrics(pred: EvalPrediction):
     predictions, labels = pred
     predictions = predictions.flatten()
 
-    pred_binary = (predictions > 0.5).astype(int)
+    predictions_prob = expit(predictions)
+
+    pred_binary = (predictions_prob > 0.5).astype(int)
     labels_binary = (labels > 0.5).astype(int)
 
     # Métriques de classification
@@ -57,8 +61,9 @@ def compute_metrics(pred:EvalPrediction):
     recall = recall_score(labels_binary, pred_binary, zero_division=0)
     f1 = f1_score(labels_binary, pred_binary, zero_division=0)
 
-    auc_roc = roc_auc_score(labels_binary, predictions)
-    auc_pr = average_precision_score(labels_binary, predictions)
+    # Métriques basées sur les probabilités
+    auc_roc = roc_auc_score(labels_binary, predictions_prob)
+    auc_pr = average_precision_score(labels_binary, predictions_prob)
 
     return {
         'precision': precision,
