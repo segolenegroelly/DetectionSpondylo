@@ -1,0 +1,496 @@
+2025-12-12 23:06:15.670858: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Nombre de lignes dupliquées : 177
+                                            symptome                                       text_cleaned
+0  leg pain, neck pain, low back pain, problems w...  leg pain, neck pain, low back pain, problems w...
+1  hip pain, back pain, neck pain, problems with ...  hip pain, back pain, neck pain, problems with ...
+2  hip pain, neck pain, low back pain, loss of se...  hip pain, neck pain, low back pain, loss of se...
+3  hip pain, problems with movement, leg cramps o...  hip pain, problems with movement, leg cramps o...
+4  back pain, neck pain, low back pain, loss of s...  back pain, neck pain, low back pain, loss of s...
+5  leg pain, back pain, neck pain, low back pain,...  leg pain, back pain, neck pain, low back pain,...
+6  leg pain, back pain, problems with movement, l...  leg pain, back pain, problems with movement, l...
+7  leg pain, back pain, low back pain, loss of se...  leg pain, back pain, low back pain, loss of se...
+8  leg pain, low back pain, problems with movemen...  leg pain, low back pain, problems with movemen...
+9  leg pain, hip pain, back pain, problems with m...  leg pain, hip pain, back pain, problems with m...
+Vocabulary size: 28996
+Max sequence length: 47
+Mean sequence length: 22.9
+Training samples: 996
+Test samples: 250
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at emilyalsentzer/Bio_ClinicalBERT and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py:827: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+Début de l'entrainement
+  0%|                                                                                                                                                                                                                                                                                                                                                                                                                                                       | 0/875 [00:00<?, ?it/s]/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+  0%|▏                                                                                                                                                                                   | 1/875 [00:20<5:02:50, 20.79s/it]                                                                                                                                                                                                                           {'loss': 0.3332, 'grad_norm': 13.352120399475098, 'learning_rate': 9e-07, 'epoch': 0.08}                                                                                                                                   
+{'loss': 0.3553, 'grad_norm': 7.930421352386475, 'learning_rate': 1.9e-06, 'epoch': 0.16}                                                                                                                                  
+{'loss': 0.2101, 'grad_norm': 9.00935173034668, 'learning_rate': 2.9e-06, 'epoch': 0.24}                                                                                                                                   
+{'loss': 0.1948, 'grad_norm': 4.236062049865723, 'learning_rate': 3.9e-06, 'epoch': 0.32}                                                                                                                                  
+{'loss': 0.1358, 'grad_norm': 11.213643074035645, 'learning_rate': 4.9000000000000005e-06, 'epoch': 0.4}                                                                                                                   
+{'loss': 0.1038, 'grad_norm': 3.3297061920166016, 'learning_rate': 5.9e-06, 'epoch': 0.48}                                                                                                                                 
+{'loss': 0.0769, 'grad_norm': 2.096701145172119, 'learning_rate': 6.900000000000001e-06, 'epoch': 0.56}                                                                                                                    
+{'loss': 0.0911, 'grad_norm': 3.0332834720611572, 'learning_rate': 7.9e-06, 'epoch': 0.64}                                                                                                                                 
+{'loss': 0.0614, 'grad_norm': 8.021371841430664, 'learning_rate': 8.9e-06, 'epoch': 0.72}                                                                                                                                  
+{'loss': 0.0657, 'grad_norm': 4.763519763946533, 'learning_rate': 9.900000000000002e-06, 'epoch': 0.8}                                                                                                                     
+{'loss': 0.0715, 'grad_norm': 1.6386958360671997, 'learning_rate': 1.09e-05, 'epoch': 0.88}                                                                                                                                
+{'loss': 0.0751, 'grad_norm': 8.510865211486816, 'learning_rate': 1.19e-05, 'epoch': 0.96}                                                                                                                                 
+{'eval_loss': 0.11922834813594818, 'eval_precision': 0.4186991869918699, 'eval_recall': 1.0, 'eval_f1': 0.5902578796561605, 'eval_auc_roc': 0.8711445743345883, 'eval_auc_pr': 0.6678113502885007, 'eval_runtime': 121.98, 'eval_samples_per_second': 2.05, 'eval_steps_per_second': 0.262, 'epoch': 1.0}                                                                                                                                             
+ 14%|█████████████████████████▍                                                                                                                                                        | 125/875 [37:53<3:02:55, 14.63s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0896, 'grad_norm': 3.287585735321045, 'learning_rate': 1.29e-05, 'epoch': 1.04}                                                                                                                                 
+{'loss': 0.0562, 'grad_norm': 2.8804750442504883, 'learning_rate': 1.3900000000000002e-05, 'epoch': 1.12}                                                                                                                  
+{'loss': 0.0467, 'grad_norm': 2.58109974861145, 'learning_rate': 1.49e-05, 'epoch': 1.2}                                                                                                                                   
+{'loss': 0.0572, 'grad_norm': 6.281031131744385, 'learning_rate': 1.59e-05, 'epoch': 1.28}                                                                                                                                 
+{'loss': 0.0657, 'grad_norm': 5.33380126953125, 'learning_rate': 1.69e-05, 'epoch': 1.36}                                                                                                                                  
+{'loss': 0.0553, 'grad_norm': 1.8008381128311157, 'learning_rate': 1.79e-05, 'epoch': 1.44}                                                                                                                                
+{'loss': 0.0339, 'grad_norm': 2.2110798358917236, 'learning_rate': 1.8900000000000002e-05, 'epoch': 1.52}                                                                                                                  
+{'loss': 0.0582, 'grad_norm': 12.460371971130371, 'learning_rate': 1.9900000000000003e-05, 'epoch': 1.6}                                                                                                                   
+{'loss': 0.1249, 'grad_norm': 1.7302582263946533, 'learning_rate': 2.09e-05, 'epoch': 1.68}                                                                                                                                
+{'loss': 0.0634, 'grad_norm': 3.325230360031128, 'learning_rate': 2.19e-05, 'epoch': 1.76}                                                                                                                                 
+{'loss': 0.0192, 'grad_norm': 1.3138704299926758, 'learning_rate': 2.29e-05, 'epoch': 1.84}                                                                                                                                
+{'loss': 0.0852, 'grad_norm': 4.164254188537598, 'learning_rate': 2.39e-05, 'epoch': 1.92}                                                                                                                                 
+{'loss': 0.0593, 'grad_norm': 5.093228340148926, 'learning_rate': 2.4900000000000002e-05, 'epoch': 2.0}                                                                                                                    
+{'eval_loss': 0.0288793183863163, 'eval_precision': 0.8512396694214877, 'eval_recall': 1.0, 'eval_f1': 0.9196428571428571, 'eval_auc_roc': 0.9953437685753914, 'eval_auc_pr': 0.993342376742887, 'eval_runtime': 121.7495, 'eval_samples_per_second': 2.053, 'eval_steps_per_second': 0.263, 'epoch': 2.0}                                                                                                                                            
+ 29%|██████████████████████████████████████████████████▎                                                                                                                             | 250/875 [1:15:27<2:31:25, 14.54s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0619, 'grad_norm': 3.7581918239593506, 'learning_rate': 2.5900000000000003e-05, 'epoch': 2.08}                                                                                                                  
+{'loss': 0.0573, 'grad_norm': 4.235246658325195, 'learning_rate': 2.6900000000000003e-05, 'epoch': 2.16}                                                                                                                   
+{'loss': 0.0457, 'grad_norm': 2.381863594055176, 'learning_rate': 2.7900000000000004e-05, 'epoch': 2.24}                                                                                                                   
+{'loss': 0.0559, 'grad_norm': 5.08172607421875, 'learning_rate': 2.8899999999999998e-05, 'epoch': 2.32}                                                                                                                    
+{'loss': 0.041, 'grad_norm': 2.020063638687134, 'learning_rate': 2.9900000000000002e-05, 'epoch': 2.4}                                                                                                                     
+{'loss': 0.0788, 'grad_norm': 3.4507322311401367, 'learning_rate': 3.09e-05, 'epoch': 2.48}                                                                                                                                
+{'loss': 0.0347, 'grad_norm': 1.3531488180160522, 'learning_rate': 3.19e-05, 'epoch': 2.56}                                                                                                                                
+{'loss': 0.0485, 'grad_norm': 1.0315910577774048, 'learning_rate': 3.29e-05, 'epoch': 2.64}                                                                                                                                
+{'loss': 0.06, 'grad_norm': 4.757035255432129, 'learning_rate': 3.3900000000000004e-05, 'epoch': 2.72}                                                                                                                     
+{'loss': 0.0419, 'grad_norm': 5.129832744598389, 'learning_rate': 3.49e-05, 'epoch': 2.8}                                                                                                                                  
+{'loss': 0.0469, 'grad_norm': 1.8118857145309448, 'learning_rate': 3.59e-05, 'epoch': 2.88}                                                                                                                                
+{'loss': 0.0465, 'grad_norm': 7.0984039306640625, 'learning_rate': 3.69e-05, 'epoch': 2.96}                                                                                                                                
+{'eval_loss': 0.03027113527059555, 'eval_precision': 0.9196428571428571, 'eval_recall': 1.0, 'eval_f1': 0.958139534883721, 'eval_auc_roc': 0.9929330955683243, 'eval_auc_pr': 0.9886000300184317, 'eval_runtime': 121.5297, 'eval_samples_per_second': 2.057, 'eval_steps_per_second': 0.263, 'epoch': 3.0}                                                                                                                                           
+ 43%|███████████████████████████████████████████████████████████████████████████▍                                                                                                    | 375/875 [1:53:00<2:00:54, 14.51s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0558, 'grad_norm': 2.3148396015167236, 'learning_rate': 3.79e-05, 'epoch': 3.04}                                                                                                                                
+{'loss': 0.0536, 'grad_norm': 2.9852957725524902, 'learning_rate': 3.8900000000000004e-05, 'epoch': 3.12}                                                                                                                  
+{'loss': 0.0189, 'grad_norm': 1.2351337671279907, 'learning_rate': 3.99e-05, 'epoch': 3.2}                                                                                                                                 
+{'loss': 0.0763, 'grad_norm': 3.589481830596924, 'learning_rate': 4.09e-05, 'epoch': 3.28}                                                                                                                                 
+{'loss': 0.0486, 'grad_norm': 2.14158296585083, 'learning_rate': 4.19e-05, 'epoch': 3.36}                                                                                                                                  
+{'loss': 0.0194, 'grad_norm': 2.5827300548553467, 'learning_rate': 4.29e-05, 'epoch': 3.44}                                                                                                                                
+{'loss': 0.0403, 'grad_norm': 1.3591347932815552, 'learning_rate': 4.39e-05, 'epoch': 3.52}                                                                                                                                
+{'loss': 0.0364, 'grad_norm': 1.4746627807617188, 'learning_rate': 4.49e-05, 'epoch': 3.6}                                                                                                                                 
+{'loss': 0.0693, 'grad_norm': 4.71562385559082, 'learning_rate': 4.5900000000000004e-05, 'epoch': 3.68}                                                                                                                    
+{'loss': 0.0549, 'grad_norm': 5.737472057342529, 'learning_rate': 4.69e-05, 'epoch': 3.76}                                                                                                                                 
+{'loss': 0.0474, 'grad_norm': 1.9021387100219727, 'learning_rate': 4.79e-05, 'epoch': 3.84}                                                                                                                                
+{'loss': 0.0619, 'grad_norm': 2.2933027744293213, 'learning_rate': 4.89e-05, 'epoch': 3.92}                                                                                                                                
+{'loss': 0.0494, 'grad_norm': 1.07090425491333, 'learning_rate': 4.99e-05, 'epoch': 4.0}                                                                                                                                   
+{'eval_loss': 0.025572942569851875, 'eval_precision': 0.412, 'eval_recall': 1.0, 'eval_f1': 0.5835694050991501, 'eval_auc_roc': 0.9954428373291064, 'eval_auc_pr': 0.9934064047838463, 'eval_runtime': 121.5996, 'eval_samples_per_second': 2.056, 'eval_steps_per_second': 0.263, 'epoch': 4.0}                                                                                                                                                      
+ 57%|████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                           | 500/875 [2:30:26<1:30:37, 14.50s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0484, 'grad_norm': 2.883527994155884, 'learning_rate': 4.88e-05, 'epoch': 4.08}                                                                                                                                 
+{'loss': 0.0341, 'grad_norm': 4.427970886230469, 'learning_rate': 4.746666666666667e-05, 'epoch': 4.16}                                                                                                                    
+{'loss': 0.0291, 'grad_norm': 0.7750293612480164, 'learning_rate': 4.6133333333333334e-05, 'epoch': 4.24}                                                                                                                  
+{'loss': 0.0446, 'grad_norm': 1.713057518005371, 'learning_rate': 4.4800000000000005e-05, 'epoch': 4.32}                                                                                                                   
+{'loss': 0.0705, 'grad_norm': 2.3777740001678467, 'learning_rate': 4.346666666666667e-05, 'epoch': 4.4}                                                                                                                    
+{'loss': 0.02, 'grad_norm': 0.7307233214378357, 'learning_rate': 4.213333333333334e-05, 'epoch': 4.48}                                                                                                                     
+{'loss': 0.0432, 'grad_norm': 2.8534393310546875, 'learning_rate': 4.08e-05, 'epoch': 4.56}                                                                                                                                
+{'loss': 0.0274, 'grad_norm': 1.0770772695541382, 'learning_rate': 3.9466666666666666e-05, 'epoch': 4.64}                                                                                                                  
+{'loss': 0.0425, 'grad_norm': 4.095040321350098, 'learning_rate': 3.8133333333333336e-05, 'epoch': 4.72}                                                                                                                   
+{'loss': 0.0371, 'grad_norm': 1.9949467182159424, 'learning_rate': 3.68e-05, 'epoch': 4.8}                                                                                                                                 
+{'loss': 0.0475, 'grad_norm': 4.157284259796143, 'learning_rate': 3.546666666666667e-05, 'epoch': 4.88}                                                                                                                    
+{'loss': 0.0345, 'grad_norm': 2.6145620346069336, 'learning_rate': 3.4133333333333334e-05, 'epoch': 4.96}                                                                                                                  
+{'eval_loss': 0.0374111644923687, 'eval_precision': 0.9196428571428571, 'eval_recall': 1.0, 'eval_f1': 0.958139534883721, 'eval_auc_roc': 0.9820685555775708, 'eval_auc_pr': 0.9209277142928315, 'eval_runtime': 121.8446, 'eval_samples_per_second': 2.052, 'eval_steps_per_second': 0.263, 'epoch': 5.0}                                                                                                                                            
+{'train_runtime': 11273.3798, 'train_samples_per_second': 0.618, 'train_steps_per_second': 0.078, 'train_loss': 0.06923979997634888, 'epoch': 5.0}                                                                         
+ 71%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                  | 625/875 [3:07:53<1:15:09, 18.04s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 32/32 [01:58<00:00,  3.69s/it]
+Résultats : {'eval_loss': 0.03027113527059555, 'eval_precision': 0.9196428571428571, 'eval_recall': 1.0, 'eval_f1': 0.958139534883721, 'eval_auc_roc': 0.9929330955683243, 'eval_auc_pr': 0.9886000300184317, 'eval_runtime': 121.7723, 'eval_samples_per_second': 2.053, 'eval_steps_per_second': 0.263, 'epoch': 5.0}
+Modèle sauvegardé
+Tokenizer sauvegardé
+Nombre de lignes dupliquées : 118
+                                            symptome                                       text_cleaned
+0  anxiety and nervousness, shortness of breath, ...  anxiety and nervousness, shortness of breath, ...
+1  shortness of breath, depressive or psychotic s...  shortness of breath, depressive or psychotic s...
+2  anxiety and nervousness, depression, shortness...  anxiety and nervousness, depression, shortness...
+3  anxiety and nervousness, depressive or psychot...  anxiety and nervousness, depressive or psychot...
+4  anxiety and nervousness, depression, insomnia,...  anxiety and nervousness, depression, insomnia,...
+5  shortness of breath, depressive or psychotic s...  shortness of breath, depressive or psychotic s...
+6                            anxiety and nervousness                            anxiety and nervousness
+7  depressive or psychotic symptoms, insomnia, ab...  depressive or psychotic symptoms, insomnia, ab...
+8  anxiety and nervousness, depressive or psychot...  anxiety and nervousness, depressive or psychot...
+9  anxiety and nervousness, depression, shortness...  anxiety and nervousness, depression, shortness...
+Vocabulary size: 28996
+Max sequence length: 65
+Mean sequence length: 25.5
+Training samples: 1344
+Test samples: 337
+'(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')), '(Request ID: ea9814a0-f4ec-491c-98e9-df0bd1e3abcc)')' thrown while requesting HEAD https://huggingface.co/emilyalsentzer/Bio_ClinicalBERT/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at emilyalsentzer/Bio_ClinicalBERT and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py:827: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+Début de l'entrainement
+  0%|                                                                                                                                                                                             | 0/1176 [00:00<?, ?it/s]/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.2993, 'grad_norm': 4.465495586395264, 'learning_rate': 9e-07, 'epoch': 0.06}                                                                                                                                    
+{'loss': 0.3046, 'grad_norm': 6.54714822769165, 'learning_rate': 1.9e-06, 'epoch': 0.12}                                                                                                                                   
+{'loss': 0.2733, 'grad_norm': 7.518213272094727, 'learning_rate': 2.9e-06, 'epoch': 0.18}                                                                                                                                  
+{'loss': 0.2358, 'grad_norm': 9.409913063049316, 'learning_rate': 3.9e-06, 'epoch': 0.24}                                                                                                                                  
+{'loss': 0.2039, 'grad_norm': 7.1799702644348145, 'learning_rate': 4.9000000000000005e-06, 'epoch': 0.3}                                                                                                                   
+{'loss': 0.1917, 'grad_norm': 5.26548957824707, 'learning_rate': 5.9e-06, 'epoch': 0.36}                                                                                                                                   
+{'loss': 0.0692, 'grad_norm': 3.912715435028076, 'learning_rate': 6.900000000000001e-06, 'epoch': 0.42}                                                                                                                    
+{'loss': 0.0343, 'grad_norm': 2.2295379638671875, 'learning_rate': 7.9e-06, 'epoch': 0.48}                                                                                                                                 
+{'loss': 0.0338, 'grad_norm': 2.4060022830963135, 'learning_rate': 8.9e-06, 'epoch': 0.54}                                                                                                                                 
+{'loss': 0.0313, 'grad_norm': 3.0775809288024902, 'learning_rate': 9.900000000000002e-06, 'epoch': 0.6}                                                                                                                    
+{'loss': 0.0349, 'grad_norm': 1.1002639532089233, 'learning_rate': 1.09e-05, 'epoch': 0.65}                                                                                                                                
+{'loss': 0.0322, 'grad_norm': 3.706270217895508, 'learning_rate': 1.19e-05, 'epoch': 0.71}                                                                                                                                 
+{'loss': 0.0251, 'grad_norm': 9.670083045959473, 'learning_rate': 1.29e-05, 'epoch': 0.77}                                                                                                                                 
+{'loss': 0.0267, 'grad_norm': 3.526124954223633, 'learning_rate': 1.3900000000000002e-05, 'epoch': 0.83}                                                                                                                   
+{'loss': 0.0244, 'grad_norm': 1.556652307510376, 'learning_rate': 1.49e-05, 'epoch': 0.89}                                                                                                                                 
+{'loss': 0.0181, 'grad_norm': 2.2948269844055176, 'learning_rate': 1.59e-05, 'epoch': 0.95}                                                                                                                                
+{'eval_loss': 0.004364934749901295, 'eval_precision': 0.801980198019802, 'eval_recall': 1.0, 'eval_f1': 0.8901098901098901, 'eval_auc_roc': 1.0, 'eval_auc_pr': 1.0, 'eval_runtime': 165.6561, 'eval_samples_per_second': 2.034, 'eval_steps_per_second': 0.26, 'epoch': 1.0}                                                                                                                                                                         
+ 14%|█████████████████████████▎                                                                                                                                                       | 168/1176 [51:11<4:50:08, 17.27s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0195, 'grad_norm': 4.252037048339844, 'learning_rate': 1.69e-05, 'epoch': 1.01}                                                                                                                                 
+{'loss': 0.0271, 'grad_norm': 4.348133087158203, 'learning_rate': 1.79e-05, 'epoch': 1.07}                                                                                                                                 
+{'loss': 0.0249, 'grad_norm': 1.2628942728042603, 'learning_rate': 1.8900000000000002e-05, 'epoch': 1.13}                                                                                                                  
+{'loss': 0.0227, 'grad_norm': 2.3163390159606934, 'learning_rate': 1.9900000000000003e-05, 'epoch': 1.19}                                                                                                                  
+{'loss': 0.0218, 'grad_norm': 5.456310749053955, 'learning_rate': 2.09e-05, 'epoch': 1.25}                                                                                                                                 
+{'loss': 0.0307, 'grad_norm': 2.134725570678711, 'learning_rate': 2.19e-05, 'epoch': 1.31}                                                                                                                                 
+{'loss': 0.0323, 'grad_norm': 0.924996554851532, 'learning_rate': 2.29e-05, 'epoch': 1.37}                                                                                                                                 
+{'loss': 0.0349, 'grad_norm': 1.1695592403411865, 'learning_rate': 2.39e-05, 'epoch': 1.43}                                                                                                                                
+{'loss': 0.0281, 'grad_norm': 0.8847241997718811, 'learning_rate': 2.4900000000000002e-05, 'epoch': 1.49}                                                                                                                  
+{'loss': 0.0259, 'grad_norm': 9.418704986572266, 'learning_rate': 2.5900000000000003e-05, 'epoch': 1.55}                                                                                                                   
+{'loss': 0.0144, 'grad_norm': 0.7655666470527649, 'learning_rate': 2.6900000000000003e-05, 'epoch': 1.61}                                                                                                                  
+{'loss': 0.022, 'grad_norm': 3.9612512588500977, 'learning_rate': 2.7900000000000004e-05, 'epoch': 1.67}                                                                                                                   
+{'loss': 0.0185, 'grad_norm': 2.348856210708618, 'learning_rate': 2.8899999999999998e-05, 'epoch': 1.73}                                                                                                                   
+{'loss': 0.0191, 'grad_norm': 1.679364562034607, 'learning_rate': 2.9900000000000002e-05, 'epoch': 1.79}                                                                                                                   
+{'loss': 0.03, 'grad_norm': 1.6112459897994995, 'learning_rate': 3.09e-05, 'epoch': 1.85}                                                                                                                                  
+{'loss': 0.0306, 'grad_norm': 7.56757926940918, 'learning_rate': 3.19e-05, 'epoch': 1.9}                                                                                                                                   
+{'loss': 0.0244, 'grad_norm': 1.0754467248916626, 'learning_rate': 3.29e-05, 'epoch': 1.96}                                                                                                                                
+{'eval_loss': 0.013097341172397137, 'eval_precision': 0.4807121661721068, 'eval_recall': 1.0, 'eval_f1': 0.6492985971943888, 'eval_auc_roc': 1.0, 'eval_auc_pr': 1.0, 'eval_runtime': 165.204, 'eval_samples_per_second': 2.04, 'eval_steps_per_second': 0.26, 'epoch': 2.0}                                                                                                                                                                          
+ 29%|██████████████████████████████████████████████████                                                                                                                             | 336/1176 [1:42:20<4:01:56, 17.28s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0192, 'grad_norm': 1.7741717100143433, 'learning_rate': 3.3900000000000004e-05, 'epoch': 2.02}                                                                                                                  
+{'loss': 0.0319, 'grad_norm': 2.571536064147949, 'learning_rate': 3.49e-05, 'epoch': 2.08}                                                                                                                                 
+{'loss': 0.0177, 'grad_norm': 1.093068242073059, 'learning_rate': 3.59e-05, 'epoch': 2.14}                                                                                                                                 
+{'loss': 0.0295, 'grad_norm': 2.053597927093506, 'learning_rate': 3.69e-05, 'epoch': 2.2}                                                                                                                                  
+{'loss': 0.0363, 'grad_norm': 2.4305570125579834, 'learning_rate': 3.79e-05, 'epoch': 2.26}                                                                                                                                
+{'loss': 0.0318, 'grad_norm': 1.345366358757019, 'learning_rate': 3.8900000000000004e-05, 'epoch': 2.32}                                                                                                                   
+{'loss': 0.0179, 'grad_norm': 2.0377843379974365, 'learning_rate': 3.99e-05, 'epoch': 2.38}                                                                                                                                
+{'loss': 0.0246, 'grad_norm': 3.8803789615631104, 'learning_rate': 4.09e-05, 'epoch': 2.44}                                                                                                                                
+{'loss': 0.0186, 'grad_norm': 1.6559725999832153, 'learning_rate': 4.19e-05, 'epoch': 2.5}                                                                                                                                 
+{'loss': 0.0358, 'grad_norm': 3.6920881271362305, 'learning_rate': 4.29e-05, 'epoch': 2.56}                                                                                                                                
+{'loss': 0.0187, 'grad_norm': 2.3976869583129883, 'learning_rate': 4.39e-05, 'epoch': 2.62}                                                                                                                                
+{'loss': 0.0234, 'grad_norm': 3.9414796829223633, 'learning_rate': 4.49e-05, 'epoch': 2.68}                                                                                                                                
+{'loss': 0.0153, 'grad_norm': 0.9313015341758728, 'learning_rate': 4.5900000000000004e-05, 'epoch': 2.74}                                                                                                                  
+{'loss': 0.0216, 'grad_norm': 2.606713056564331, 'learning_rate': 4.69e-05, 'epoch': 2.8}                                                                                                                                  
+{'loss': 0.0311, 'grad_norm': 3.765535831451416, 'learning_rate': 4.79e-05, 'epoch': 2.86}                                                                                                                                 
+{'loss': 0.031, 'grad_norm': 5.253162860870361, 'learning_rate': 4.89e-05, 'epoch': 2.92}                                                                                                                                  
+{'loss': 0.0565, 'grad_norm': 2.6789426803588867, 'learning_rate': 4.99e-05, 'epoch': 2.98}                                                                                                                                
+{'eval_loss': 0.01592204160988331, 'eval_precision': 0.5015479876160991, 'eval_recall': 1.0, 'eval_f1': 0.668041237113402, 'eval_auc_roc': 0.9999294532627866, 'eval_auc_pr': 0.9999240258714115, 'eval_runtime': 165.2225, 'eval_samples_per_second': 2.04, 'eval_steps_per_second': 0.26, 'epoch': 3.0}                                                                                                                                             
+{'train_runtime': 9215.3574, 'train_samples_per_second': 1.021, 'train_steps_per_second': 0.128, 'train_loss': 0.05434537622781973, 'epoch': 3.0}                                                                          
+ 43%|███████████████████████████████████████████████████████████████████████████                                                                                                    | 504/1176 [2:33:35<3:24:47, 18.28s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 43/43 [02:41<00:00,  3.75s/it]
+Résultats : {'eval_loss': 0.004364934749901295, 'eval_precision': 0.801980198019802, 'eval_recall': 1.0, 'eval_f1': 0.8901098901098901, 'eval_auc_roc': 1.0, 'eval_auc_pr': 1.0, 'eval_runtime': 164.9391, 'eval_samples_per_second': 2.043, 'eval_steps_per_second': 0.261, 'epoch': 3.0}
+Modèle sauvegardé
+Tokenizer sauvegardé
+Nombre de lignes dupliquées : 99
+                                            symptome                                       text_cleaned
+0  leg pain, arm pain, back pain, neck pain, shou...  leg pain, arm pain, back pain, neck pain, shou...
+1  arm pain, back pain, neck pain, low back pain,...  arm pain, back pain, neck pain, low back pain,...
+2  leg pain, hip pain, arm pain, back pain, low b...  leg pain, hip pain, arm pain, back pain, low b...
+3  leg pain, arm pain, low back pain, loss of sen...  leg pain, arm pain, low back pain, loss of sen...
+4  leg pain, hip pain, low back pain, loss of sen...  leg pain, hip pain, low back pain, loss of sen...
+5    arm pain, back pain, paresthesia, shoulder pain    arm pain, back pain, paresthesia, shoulder pain
+6                                           leg pain                                           leg pain
+7  arm pain, loss of sensation, paresthesia, arm ...  arm pain, loss of sensation, paresthesia, arm ...
+8  leg pain, arm pain, low back pain, loss of sen...  leg pain, arm pain, low back pain, loss of sen...
+9  leg pain, hip pain, arm pain, neck pain, pares...  leg pain, hip pain, arm pain, neck pain, pares...
+Vocabulary size: 28996
+Max sequence length: 65
+Mean sequence length: 21.8
+Training samples: 1360
+Test samples: 341
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at emilyalsentzer/Bio_ClinicalBERT and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py:827: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+Début de l'entrainement
+  0%|                                                                                                                                                                                             | 0/1190 [00:00<?, ?it/s]/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.2184, 'grad_norm': 15.985235214233398, 'learning_rate': 9e-07, 'epoch': 0.06}                                                                                                                                   
+{'loss': 0.2665, 'grad_norm': 12.33481216430664, 'learning_rate': 1.9e-06, 'epoch': 0.12}                                                                                                                                  
+{'loss': 0.2188, 'grad_norm': 6.690795421600342, 'learning_rate': 2.9e-06, 'epoch': 0.18}                                                                                                                                  
+{'loss': 0.1863, 'grad_norm': 3.2682266235351562, 'learning_rate': 3.9e-06, 'epoch': 0.24}                                                                                                                                 
+{'loss': 0.1956, 'grad_norm': 5.292083263397217, 'learning_rate': 4.9000000000000005e-06, 'epoch': 0.29}                                                                                                                   
+{'loss': 0.0913, 'grad_norm': 3.7610361576080322, 'learning_rate': 5.9e-06, 'epoch': 0.35}                                                                                                                                 
+{'loss': 0.0718, 'grad_norm': 9.880354881286621, 'learning_rate': 6.900000000000001e-06, 'epoch': 0.41}                                                                                                                    
+{'loss': 0.077, 'grad_norm': 3.827949047088623, 'learning_rate': 7.9e-06, 'epoch': 0.47}                                                                                                                                   
+{'loss': 0.0769, 'grad_norm': 2.436108350753784, 'learning_rate': 8.9e-06, 'epoch': 0.53}                                                                                                                                  
+{'loss': 0.054, 'grad_norm': 3.5104055404663086, 'learning_rate': 9.900000000000002e-06, 'epoch': 0.59}                                                                                                                    
+{'loss': 0.0383, 'grad_norm': 2.158836841583252, 'learning_rate': 1.09e-05, 'epoch': 0.65}                                                                                                                                 
+{'loss': 0.0647, 'grad_norm': 2.6658198833465576, 'learning_rate': 1.19e-05, 'epoch': 0.71}                                                                                                                                
+{'loss': 0.063, 'grad_norm': 9.453179359436035, 'learning_rate': 1.29e-05, 'epoch': 0.76}                                                                                                                                  
+{'loss': 0.0538, 'grad_norm': 1.782613754272461, 'learning_rate': 1.3900000000000002e-05, 'epoch': 0.82}                                                                                                                   
+{'loss': 0.0397, 'grad_norm': 3.5384538173675537, 'learning_rate': 1.49e-05, 'epoch': 0.88}                                                                                                                                
+{'loss': 0.0355, 'grad_norm': 2.678635835647583, 'learning_rate': 1.59e-05, 'epoch': 0.94}                                                                                                                                 
+{'loss': 0.0213, 'grad_norm': 0.6155363321304321, 'learning_rate': 1.69e-05, 'epoch': 1.0}                                                                                                                                 
+{'eval_loss': 0.01744745299220085, 'eval_precision': 0.5824561403508772, 'eval_recall': 1.0, 'eval_f1': 0.7361419068736141, 'eval_auc_roc': 0.9961617900172117, 'eval_auc_pr': 0.9950960331394387, 'eval_runtime': 166.7008, 'eval_samples_per_second': 2.046, 'eval_steps_per_second': 0.258, 'epoch': 1.0}                                                                                                                                          
+ 14%|█████████████████████████▎                                                                                                                                                       | 170/1190 [51:54<4:55:45, 17.40s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0305, 'grad_norm': 1.5983754396438599, 'learning_rate': 1.79e-05, 'epoch': 1.06}                                                                                                                                
+{'loss': 0.0323, 'grad_norm': 4.6721601486206055, 'learning_rate': 1.8900000000000002e-05, 'epoch': 1.12}                                                                                                                  
+{'loss': 0.0268, 'grad_norm': 4.587381839752197, 'learning_rate': 1.9900000000000003e-05, 'epoch': 1.18}                                                                                                                   
+{'loss': 0.0316, 'grad_norm': 1.6746666431427002, 'learning_rate': 2.09e-05, 'epoch': 1.24}                                                                                                                                
+{'loss': 0.0216, 'grad_norm': 1.8516972064971924, 'learning_rate': 2.19e-05, 'epoch': 1.29}                                                                                                                                
+{'loss': 0.0373, 'grad_norm': 1.9291168451309204, 'learning_rate': 2.29e-05, 'epoch': 1.35}                                                                                                                                
+{'loss': 0.0218, 'grad_norm': 1.4509825706481934, 'learning_rate': 2.39e-05, 'epoch': 1.41}                                                                                                                                
+{'loss': 0.0394, 'grad_norm': 6.769584655761719, 'learning_rate': 2.4900000000000002e-05, 'epoch': 1.47}                                                                                                                   
+{'loss': 0.0297, 'grad_norm': 1.6365587711334229, 'learning_rate': 2.5900000000000003e-05, 'epoch': 1.53}                                                                                                                  
+{'loss': 0.0309, 'grad_norm': 2.087385654449463, 'learning_rate': 2.6900000000000003e-05, 'epoch': 1.59}                                                                                                                   
+{'loss': 0.0256, 'grad_norm': 1.3620887994766235, 'learning_rate': 2.7900000000000004e-05, 'epoch': 1.65}                                                                                                                  
+{'loss': 0.0579, 'grad_norm': 1.5079567432403564, 'learning_rate': 2.8899999999999998e-05, 'epoch': 1.71}                                                                                                                  
+{'loss': 0.0287, 'grad_norm': 1.6407487392425537, 'learning_rate': 2.9900000000000002e-05, 'epoch': 1.76}                                                                                                                  
+{'loss': 0.0535, 'grad_norm': 4.542583465576172, 'learning_rate': 3.09e-05, 'epoch': 1.82}                                                                                                                                 
+{'loss': 0.0346, 'grad_norm': 1.910569667816162, 'learning_rate': 3.19e-05, 'epoch': 1.88}                                                                                                                                 
+{'loss': 0.049, 'grad_norm': 4.521235942840576, 'learning_rate': 3.29e-05, 'epoch': 1.94}                                                                                                                                  
+{'loss': 0.0349, 'grad_norm': 1.6703317165374756, 'learning_rate': 3.3900000000000004e-05, 'epoch': 2.0}                                                                                                                   
+{'eval_loss': 0.022209256887435913, 'eval_precision': 0.503030303030303, 'eval_recall': 1.0, 'eval_f1': 0.6693548387096774, 'eval_auc_roc': 0.9981927710843373, 'eval_auc_pr': 0.9980414130641482, 'eval_runtime': 168.699, 'eval_samples_per_second': 2.021, 'eval_steps_per_second': 0.255, 'epoch': 2.0}                                                                                                                                           
+ 29%|██████████████████████████████████████████████████                                                                                                                             | 340/1190 [1:43:59<4:07:53, 17.50s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0488, 'grad_norm': 1.4935332536697388, 'learning_rate': 3.49e-05, 'epoch': 2.06}                                                                                                                                
+{'loss': 0.0228, 'grad_norm': 3.2225852012634277, 'learning_rate': 3.59e-05, 'epoch': 2.12}                                                                                                                                
+{'loss': 0.0341, 'grad_norm': 5.574251651763916, 'learning_rate': 3.69e-05, 'epoch': 2.18}                                                                                                                                 
+{'loss': 0.0291, 'grad_norm': 7.930033206939697, 'learning_rate': 3.79e-05, 'epoch': 2.24}                                                                                                                                 
+{'loss': 0.048, 'grad_norm': 1.4613398313522339, 'learning_rate': 3.8900000000000004e-05, 'epoch': 2.29}                                                                                                                   
+{'loss': 0.0237, 'grad_norm': 5.238077163696289, 'learning_rate': 3.99e-05, 'epoch': 2.35}                                                                                                                                 
+{'loss': 0.0274, 'grad_norm': 6.949552059173584, 'learning_rate': 4.09e-05, 'epoch': 2.41}                                                                                                                                 
+{'loss': 0.0299, 'grad_norm': 1.6636250019073486, 'learning_rate': 4.19e-05, 'epoch': 2.47}                                                                                                                                
+{'loss': 0.0258, 'grad_norm': 3.93599271774292, 'learning_rate': 4.29e-05, 'epoch': 2.53}                                                                                                                                  
+{'loss': 0.0273, 'grad_norm': 1.61074697971344, 'learning_rate': 4.39e-05, 'epoch': 2.59}                                                                                                                                  
+{'loss': 0.0346, 'grad_norm': 2.2516016960144043, 'learning_rate': 4.49e-05, 'epoch': 2.65}                                                                                                                                
+{'loss': 0.02, 'grad_norm': 1.8481049537658691, 'learning_rate': 4.5900000000000004e-05, 'epoch': 2.71}                                                                                                                    
+{'loss': 0.0254, 'grad_norm': 2.39628005027771, 'learning_rate': 4.69e-05, 'epoch': 2.76}                                                                                                                                  
+{'loss': 0.0167, 'grad_norm': 1.042004108428955, 'learning_rate': 4.79e-05, 'epoch': 2.82}                                                                                                                                 
+{'loss': 0.0445, 'grad_norm': 1.5278054475784302, 'learning_rate': 4.89e-05, 'epoch': 2.88}                                                                                                                                
+{'loss': 0.0474, 'grad_norm': 9.353608131408691, 'learning_rate': 4.99e-05, 'epoch': 2.94}                                                                                                                                 
+{'loss': 0.024, 'grad_norm': 1.4125261306762695, 'learning_rate': 4.9347826086956524e-05, 'epoch': 3.0}                                                                                                                    
+{'eval_loss': 0.010517988353967667, 'eval_precision': 0.664, 'eval_recall': 1.0, 'eval_f1': 0.7980769230769231, 'eval_auc_roc': 0.9933390705679862, 'eval_auc_pr': 0.9832095637546979, 'eval_runtime': 166.6193, 'eval_samples_per_second': 2.047, 'eval_steps_per_second': 0.258, 'epoch': 3.0}                                                                                                                                                      
+ 43%|███████████████████████████████████████████████████████████████████████████                                                                                                    | 510/1190 [2:36:00<3:16:46, 17.36s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.021, 'grad_norm': 1.1397978067398071, 'learning_rate': 4.8623188405797106e-05, 'epoch': 3.06}                                                                                                                   
+{'loss': 0.02, 'grad_norm': 2.0229060649871826, 'learning_rate': 4.789855072463768e-05, 'epoch': 3.12}                                                                                                                     
+{'loss': 0.0286, 'grad_norm': 2.584787607192993, 'learning_rate': 4.7173913043478264e-05, 'epoch': 3.18}                                                                                                                   
+{'loss': 0.0138, 'grad_norm': 1.8668807744979858, 'learning_rate': 4.6449275362318846e-05, 'epoch': 3.24}                                                                                                                  
+{'loss': 0.0201, 'grad_norm': 2.733466148376465, 'learning_rate': 4.572463768115942e-05, 'epoch': 3.29}                                                                                                                    
+{'loss': 0.0121, 'grad_norm': 1.4213091135025024, 'learning_rate': 4.5e-05, 'epoch': 3.35}                                                                                                                                 
+{'loss': 0.0192, 'grad_norm': 3.9744176864624023, 'learning_rate': 4.427536231884058e-05, 'epoch': 3.41}                                                                                                                   
+{'loss': 0.0353, 'grad_norm': 1.6812312602996826, 'learning_rate': 4.355072463768116e-05, 'epoch': 3.47}                                                                                                                   
+{'loss': 0.0324, 'grad_norm': 1.2924052476882935, 'learning_rate': 4.282608695652174e-05, 'epoch': 3.53}                                                                                                                   
+{'loss': 0.0307, 'grad_norm': 5.085470199584961, 'learning_rate': 4.210144927536232e-05, 'epoch': 3.59}                                                                                                                    
+{'loss': 0.0391, 'grad_norm': 0.9681649208068848, 'learning_rate': 4.13768115942029e-05, 'epoch': 3.65}                                                                                                                    
+{'loss': 0.0425, 'grad_norm': 8.014189720153809, 'learning_rate': 4.065217391304348e-05, 'epoch': 3.71}                                                                                                                    
+{'loss': 0.0436, 'grad_norm': 6.126827239990234, 'learning_rate': 3.9927536231884064e-05, 'epoch': 3.76}                                                                                                                   
+{'loss': 0.0197, 'grad_norm': 1.6883206367492676, 'learning_rate': 3.920289855072464e-05, 'epoch': 3.82}                                                                                                                   
+{'loss': 0.0149, 'grad_norm': 0.6543300151824951, 'learning_rate': 3.847826086956522e-05, 'epoch': 3.88}                                                                                                                   
+{'loss': 0.0248, 'grad_norm': 1.235748052597046, 'learning_rate': 3.77536231884058e-05, 'epoch': 3.94}                                                                                                                     
+{'loss': 0.025, 'grad_norm': 0.5933234691619873, 'learning_rate': 3.702898550724638e-05, 'epoch': 4.0}                                                                                                                     
+{'eval_loss': 0.014796881005167961, 'eval_precision': 0.9764705882352941, 'eval_recall': 1.0, 'eval_f1': 0.9880952380952381, 'eval_auc_roc': 0.9934423407917383, 'eval_auc_pr': 0.9874291985682537, 'eval_runtime': 167.54, 'eval_samples_per_second': 2.035, 'eval_steps_per_second': 0.257, 'epoch': 4.0}                                                                                                                                           
+ 57%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                                           | 680/1190 [3:28:41<2:28:31, 17.47s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0231, 'grad_norm': 1.5390986204147339, 'learning_rate': 3.630434782608696e-05, 'epoch': 4.06}                                                                                                                   
+{'loss': 0.0395, 'grad_norm': 5.34043550491333, 'learning_rate': 3.5579710144927535e-05, 'epoch': 4.12}                                                                                                                    
+{'loss': 0.0165, 'grad_norm': 5.007081031799316, 'learning_rate': 3.485507246376812e-05, 'epoch': 4.18}                                                                                                                    
+{'loss': 0.0136, 'grad_norm': 1.150600790977478, 'learning_rate': 3.413043478260869e-05, 'epoch': 4.24}                                                                                                                    
+{'loss': 0.0137, 'grad_norm': 2.6643288135528564, 'learning_rate': 3.3405797101449275e-05, 'epoch': 4.29}                                                                                                                  
+{'loss': 0.0146, 'grad_norm': 1.9732369184494019, 'learning_rate': 3.268115942028986e-05, 'epoch': 4.35}                                                                                                                   
+{'loss': 0.0293, 'grad_norm': 1.9469980001449585, 'learning_rate': 3.195652173913043e-05, 'epoch': 4.41}                                                                                                                   
+{'loss': 0.0183, 'grad_norm': 2.0773513317108154, 'learning_rate': 3.1231884057971014e-05, 'epoch': 4.47}                                                                                                                  
+{'loss': 0.0115, 'grad_norm': 0.7846122980117798, 'learning_rate': 3.0507246376811593e-05, 'epoch': 4.53}                                                                                                                  
+{'loss': 0.0199, 'grad_norm': 0.7405080199241638, 'learning_rate': 2.9782608695652175e-05, 'epoch': 4.59}                                                                                                                  
+{'loss': 0.0289, 'grad_norm': 2.0017755031585693, 'learning_rate': 2.9057971014492757e-05, 'epoch': 4.65}                                                                                                                  
+{'loss': 0.0139, 'grad_norm': 1.3335344791412354, 'learning_rate': 2.8333333333333335e-05, 'epoch': 4.71}                                                                                                                  
+{'loss': 0.0096, 'grad_norm': 0.5569234490394592, 'learning_rate': 2.7608695652173917e-05, 'epoch': 4.76}                                                                                                                  
+{'loss': 0.0135, 'grad_norm': 0.8607165813446045, 'learning_rate': 2.6884057971014493e-05, 'epoch': 4.82}                                                                                                                  
+{'loss': 0.0212, 'grad_norm': 1.5474977493286133, 'learning_rate': 2.6159420289855075e-05, 'epoch': 4.88}                                                                                                                  
+{'loss': 0.0272, 'grad_norm': 2.946394205093384, 'learning_rate': 2.543478260869565e-05, 'epoch': 4.94}                                                                                                                    
+{'loss': 0.0093, 'grad_norm': 2.0881083011627197, 'learning_rate': 2.4710144927536232e-05, 'epoch': 5.0}                                                                                                                   
+{'eval_loss': 0.011999622918665409, 'eval_precision': 0.9822485207100592, 'eval_recall': 1.0, 'eval_f1': 0.991044776119403, 'eval_auc_roc': 0.998881239242685, 'eval_auc_pr': 0.9986782028067377, 'eval_runtime': 166.5512, 'eval_samples_per_second': 2.047, 'eval_steps_per_second': 0.258, 'epoch': 5.0}                                                                                                                                           
+ 71%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 850/1190 [4:20:50<1:38:17, 17.35s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0222, 'grad_norm': 0.43371662497520447, 'learning_rate': 2.398550724637681e-05, 'epoch': 5.06}                                                                                                                  
+{'loss': 0.0096, 'grad_norm': 0.5302531123161316, 'learning_rate': 2.3260869565217393e-05, 'epoch': 5.12}                                                                                                                  
+{'loss': 0.0235, 'grad_norm': 2.9369852542877197, 'learning_rate': 2.2536231884057975e-05, 'epoch': 5.18}                                                                                                                  
+{'loss': 0.0254, 'grad_norm': 1.9936343431472778, 'learning_rate': 2.1811594202898553e-05, 'epoch': 5.24}                                                                                                                  
+{'loss': 0.0104, 'grad_norm': 1.1071072816848755, 'learning_rate': 2.1086956521739132e-05, 'epoch': 5.29}                                                                                                                  
+{'loss': 0.0108, 'grad_norm': 0.6732964515686035, 'learning_rate': 2.036231884057971e-05, 'epoch': 5.35}                                                                                                                   
+{'loss': 0.0108, 'grad_norm': 0.5175802111625671, 'learning_rate': 1.963768115942029e-05, 'epoch': 5.41}                                                                                                                   
+{'loss': 0.0097, 'grad_norm': 0.41034767031669617, 'learning_rate': 1.8913043478260868e-05, 'epoch': 5.47}                                                                                                                 
+{'loss': 0.013, 'grad_norm': 0.5541637539863586, 'learning_rate': 1.818840579710145e-05, 'epoch': 5.53}                                                                                                                    
+{'loss': 0.0222, 'grad_norm': 0.6262510418891907, 'learning_rate': 1.7463768115942032e-05, 'epoch': 5.59}                                                                                                                  
+{'loss': 0.0229, 'grad_norm': 0.44635242223739624, 'learning_rate': 1.673913043478261e-05, 'epoch': 5.65}                                                                                                                  
+{'loss': 0.0094, 'grad_norm': 0.5357879996299744, 'learning_rate': 1.601449275362319e-05, 'epoch': 5.71}                                                                                                                   
+{'loss': 0.0084, 'grad_norm': 0.41364404559135437, 'learning_rate': 1.5289855072463768e-05, 'epoch': 5.76}        
+{'loss': 0.0062, 'grad_norm': 0.5654261112213135, 'learning_rate': 1.4565217391304348e-05, 'epoch': 5.82}                                                                                                                  
+{'loss': 0.0209, 'grad_norm': 3.4864792823791504, 'learning_rate': 1.3840579710144927e-05, 'epoch': 5.88}                                                                                                                  
+{'loss': 0.0147, 'grad_norm': 1.0255141258239746, 'learning_rate': 1.3115942028985509e-05, 'epoch': 5.94}                                                                                                                  
+{'loss': 0.009, 'grad_norm': 1.4817382097244263, 'learning_rate': 1.2391304347826088e-05, 'epoch': 6.0}                                                                                                                    
+{'eval_loss': 0.004024160094559193, 'eval_precision': 0.6459143968871596, 'eval_recall': 1.0, 'eval_f1': 0.7848699763593381, 'eval_auc_roc': 0.9985370051635112, 'eval_auc_pr': 0.9982127925761172, 'eval_runtime': 173.1534, 'eval_samples_per_second': 1.969, 'eval_steps_per_second': 0.248, 'epoch': 6.0}                                                                                                                                         
+ 86%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                         | 1020/1190 [5:14:23<58:47, 20.75s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+{'loss': 0.0112, 'grad_norm': 0.7813623547554016, 'learning_rate': 1.1666666666666668e-05, 'epoch': 6.06}                                                                                                                  
+{'loss': 0.0066, 'grad_norm': 1.8858317136764526, 'learning_rate': 1.0942028985507247e-05, 'epoch': 6.12}                                                                                                                  
+{'loss': 0.0135, 'grad_norm': 1.0897122621536255, 'learning_rate': 1.0217391304347827e-05, 'epoch': 6.18}                                                                                                                  
+{'loss': 0.0173, 'grad_norm': 1.2640929222106934, 'learning_rate': 9.492753623188407e-06, 'epoch': 6.24}                                                                                                                   
+{'loss': 0.0127, 'grad_norm': 2.9215359687805176, 'learning_rate': 8.768115942028986e-06, 'epoch': 6.29}                                                                                                                   
+{'loss': 0.0302, 'grad_norm': 1.49247145652771, 'learning_rate': 8.043478260869565e-06, 'epoch': 6.35}                                                                                                                     
+{'loss': 0.0227, 'grad_norm': 1.1762914657592773, 'learning_rate': 7.318840579710146e-06, 'epoch': 6.41}                                                                                                                   
+{'loss': 0.0094, 'grad_norm': 0.5493234395980835, 'learning_rate': 6.594202898550725e-06, 'epoch': 6.47}                                                                                                                   
+{'loss': 0.0068, 'grad_norm': 0.4322032332420349, 'learning_rate': 5.869565217391305e-06, 'epoch': 6.53}                                                                                                                   
+{'loss': 0.0087, 'grad_norm': 1.8763679265975952, 'learning_rate': 5.144927536231884e-06, 'epoch': 6.59}                                                                                                                   
+{'loss': 0.0065, 'grad_norm': 0.29700520634651184, 'learning_rate': 4.420289855072464e-06, 'epoch': 6.65}                                                                                                                  
+{'loss': 0.0175, 'grad_norm': 1.8264830112457275, 'learning_rate': 3.695652173913044e-06, 'epoch': 6.71}                                                                                                                   
+{'loss': 0.0173, 'grad_norm': 0.9949697256088257, 'learning_rate': 2.9710144927536235e-06, 'epoch': 6.76}                                                                                                                  
+{'loss': 0.0086, 'grad_norm': 0.3502046763896942, 'learning_rate': 2.246376811594203e-06, 'epoch': 6.82}                                                                                                                   
+{'loss': 0.0059, 'grad_norm': 1.551702857017517, 'learning_rate': 1.5217391304347827e-06, 'epoch': 6.88}                                                                                                                   
+{'loss': 0.0179, 'grad_norm': 0.8397261500358582, 'learning_rate': 7.971014492753623e-07, 'epoch': 6.94}                                                                                                                   
+{'loss': 0.0047, 'grad_norm': 1.2025128602981567, 'learning_rate': 7.246376811594203e-08, 'epoch': 7.0}                                                                                                                    
+{'eval_loss': 0.007940537296235561, 'eval_precision': 0.6360153256704981, 'eval_recall': 1.0, 'eval_f1': 0.7775175644028103, 'eval_auc_roc': 0.9961617900172117, 'eval_auc_pr': 0.9933458536786561, 'eval_runtime': 167.2282, 'eval_samples_per_second': 2.039, 'eval_steps_per_second': 0.257, 'epoch': 7.0}                                                                                                                                         
+{'train_runtime': 22127.6446, 'train_samples_per_second': 0.43, 'train_steps_per_second': 0.054, 'train_loss': 0.034631399284390844, 'epoch': 7.0}                                                                         
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1190/1190 [6:08:47<00:00, 18.59s/it]
+/home/segolene/Documents/workspace/DetectionSpondylo/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 43/43 [02:44<00:00,  3.82s/it]
+Résultats : {'eval_loss': 0.011999622918665409, 'eval_precision': 0.9822485207100592, 'eval_recall': 1.0, 'eval_f1': 0.991044776119403, 'eval_auc_roc': 0.998881239242685, 'eval_auc_pr': 0.9986782028067377, 'eval_runtime': 170.4287, 'eval_samples_per_second': 2.001, 'eval_steps_per_second': 0.252, 'epoch': 7.0}
+Modèle sauvegardé
+Tokenizer sauvegardé
+<div class="container">
+        <h2>Determination de pathologie</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Symptômes</th>
+                    <th>Maladie</th>
+                    <th>Spondylolisthésis</th>
+                    <th>Taux de confiance SP</th>
+                    <th>Trouble anxieux panique</th>
+                    <th>Taux de confiance TA</th>
+                    <th>Hernie discale</th>
+                    <th>Taux de confiance HD</th>
+                </tr>
+            </thead>
+            <tbody><tr><td>low back pain, problems with movement, paresthesia, leg cramps or spasms, leg weakness</td>
+        <td>spondylolisthesis</td>
+        <td>oui</td>
+        <td>0.74</td>
+        <td>non</td>
+        <td>0.49</td>
+        <td>non</td>
+        <td>0.5</td>
+        </tr><tr><td>hip pain, back pain, neck pain, low back pain, problems with movement, loss of sensation, leg cramps or spasms</td>
+        <td>spondylolisthesis</td>
+        <td>oui</td>
+        <td>0.73</td>
+        <td>non</td>
+        <td>0.5</td>
+        <td>non</td>
+        <td>0.49</td>
+        </tr><tr><td>leg pain, back pain, neck pain, problems with movement, loss of sensation, paresthesia, leg cramps or spasms</td>
+        <td>spondylolisthesis</td>
+        <td>oui</td>
+        <td>0.73</td>
+        <td>non</td>
+        <td>0.5</td>
+        <td>non</td>
+        <td>0.49</td>
+        </tr><tr><td>leg pain, hip pain, neck pain, problems with movement, paresthesia, leg weakness</td>
+        <td>spondylolisthesis</td>
+        <td>oui</td>
+        <td>0.73</td>
+        <td>non</td>
+        <td>0.49</td>
+        <td>oui</td>
+        <td>0.72</td>
+        </tr><tr><td>arm pain, back pain, neck pain, paresthesia, shoulder pain, arm weakness</td>
+        <td>herniated disk</td>
+        <td>non</td>
+        <td>0.47</td>
+        <td>non</td>
+        <td>0.49</td>
+        <td>oui</td>
+        <td>0.72</td>
+        </tr><tr><td>hip pain, back pain, low back pain, loss of sensation, paresthesia, shoulder pain, leg weakness</td>
+        <td>herniated disk</td>
+        <td>non</td>
+        <td>0.48</td>
+        <td>non</td>
+        <td>0.5</td>
+        <td>oui</td>
+        <td>0.72</td>
+        </tr><tr><td>herniated disk     loss of sensation, paresthesia, shoulder pain</td>
+        <td>herniated disk</td>
+        <td>non</td>
+        <td>0.48</td>
+        <td>non</td>
+        <td>0.51</td>
+        <td>non</td>
+        <td>0.57</td>
+        </tr><tr><td>herniated disk     hip pain, arm pain, back pain, low back pain, loss of sensation, paresthesia, leg weakness</td>
+        <td>herniated disk</td>
+        <td>non</td>
+        <td>0.48</td>
+        <td>non</td>
+        <td>0.5</td>
+        <td>oui</td>
+        <td>0.72</td>
+        </tr><tr><td>depressive or psychotic symptoms, irregular heartbeat, breathing fast</td>
+        <td>panic disorder</td>
+        <td>non</td>
+        <td>0.48</td>
+        <td>oui</td>
+        <td>0.74</td>
+        <td>non</td>
+        <td>0.47</td>
+        </tr><tr><td>insomnia, palpitations, irregular heartbeat</td>
+        <td>panic disorder</td>
+        <td>non</td>
+        <td>0.48</td>
+        <td>oui</td>
+        <td>0.74</td>
+        <td>non</td>
+        <td>0.48</td>
+        </tr><tr><td>depression, shortness of breath, depressive or psychotic symptoms, dizziness, insomnia, abnormal involuntary movements, irregular heartbeat</td>
+        <td>panic disorder</td>
+        <td>non</td>
+        <td>0.48</td>
+        <td>oui</td>
+        <td>0.73</td>
+        <td>non</td>
+        <td>0.48</td>
+        </tr><tr><td>depression, depressive or psychotic symptoms, insomnia, abnormal involuntary movements, chest tightness, palpitations</td>
+        <td>panic disorder</td>
+        <td>non</td>
+        <td>0.49</td>
+        <td>oui</td>
+        <td>0.73</td>
+        <td>non</td>
+        <td>0.48</td>
+        </tr></tbody>
+            </table>
+        </div>
