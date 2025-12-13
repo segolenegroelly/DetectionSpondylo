@@ -2,6 +2,8 @@
 import pandas as pd
 import torch
 
+from data.preprocessing import textCleaning
+
 
 def generationReponse(df: pd.DataFrame) -> str:
     result = '''<div class="container">
@@ -82,7 +84,8 @@ def generatePrediction(modeleSpondylo, tokenSpondylo, modelePanic, tokenPanic, m
 
 
 def predireMaladie(model, token, texte:str)->tuple[str,float]:
-    inputs = token(texte, return_tensors="pt", truncation=True, max_length=512)
+    text_clean = textCleaning(texte)
+    inputs = token(text_clean, return_tensors="pt", truncation=True, max_length=512)
     outputs = model(**inputs)
     probabilite = torch.sigmoid(outputs.logits).item()
     return "oui" if probabilite>0.60 else "non",probabilite
